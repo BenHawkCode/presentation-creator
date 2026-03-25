@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coach Consultant — Icon & Emblem Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #5B9A9A;
+            --dark-teal: #3d7a7a;
+            --light-teal: #7abfbf;
+            --accent: #FF6B35;
+            --accent2: #FFD166;
+            --bg: #0a0a0a;
+            --bg2: #141414;
+            --white: #ffffff;
+            --gray: #aaaaaa;
+            --red: #ff4444;
+            --green: #44ff88;
+            --purple: #9B6DFF;
+            --blue: #4D9FFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); line-height: 1.6; }
+
+        .top-nav {
+            position: fixed; top: 0; left: 0; right: 0; background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06);
+            z-index: 1000; padding: 10px 30px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-brand { font-family: 'Space Grotesk'; font-weight: 800; font-size: 14px; }
+        .nav-brand span { color: var(--teal); }
+        .nav-links { display: flex; gap: 4px; flex-wrap: wrap; }
+        .nav-link { padding: 4px 10px; border-radius: 14px; font-size: 10px; font-weight: 600; text-decoration: none; color: var(--gray); cursor: pointer; transition: all 0.3s; }
+        .nav-link:hover, .nav-link.active { background: rgba(91,154,154,0.15); color: var(--teal); }
+
+        .header { padding: 100px 40px 40px; text-align: center; background: linear-gradient(135deg, #0a0a0a, #1a2a2a); }
+        h1 { font-family: 'Space Grotesk'; font-size: clamp(26px, 3.5vw, 44px); font-weight: 900; margin-bottom: 10px; }
+        h2 { font-family: 'Space Grotesk'; font-size: clamp(20px, 2.5vw, 32px); font-weight: 800; margin-bottom: 8px; }
+        .gradient-text { background: linear-gradient(135deg, var(--light-teal), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .divider { width: 50px; height: 3px; background: var(--teal); margin: 12px auto; border-radius: 2px; }
+        .section-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 3px; color: var(--teal); font-weight: 700; margin-bottom: 6px; }
+
+        .section { padding: 40px 30px; max-width: 1500px; margin: 0 auto; }
+        .category-sep { padding: 40px 30px 12px; max-width: 1500px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.06); }
+        .cat-head { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+        .cat-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .cat-count { font-size: 10px; font-weight: 700; color: var(--teal); background: rgba(91,154,154,0.15); padding: 2px 8px; border-radius: 10px; margin-left: 8px; }
+
+        /* ─── ICON GRID ─── */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .icon-cell {
+            background: var(--bg2);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 16px 8px 10px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: default;
+            position: relative;
+        }
+        .icon-cell:hover {
+            border-color: var(--teal);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(91,154,154,0.08);
+        }
+
+        .icon-display {
+            width: 52px; height: 52px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 8px; font-size: 22px;
+            position: relative;
+        }
+
+        /* ─── ICON STYLES ─── */
+        /* Glass Circle */
+        .style-glass-circle .icon-display {
+            border-radius: 50%; backdrop-filter: blur(8px);
+            background: rgba(91,154,154,0.12); border: 1.5px solid rgba(91,154,154,0.3);
+        }
+        .style-glass-circle-accent .icon-display {
+            border-radius: 50%; backdrop-filter: blur(8px);
+            background: rgba(255,107,53,0.12); border: 1.5px solid rgba(255,107,53,0.3);
+        }
+        .style-glass-circle-yellow .icon-display {
+            border-radius: 50%; backdrop-filter: blur(8px);
+            background: rgba(255,209,102,0.12); border: 1.5px solid rgba(255,209,102,0.3);
+        }
+        .style-glass-circle-white .icon-display {
+            border-radius: 50%; backdrop-filter: blur(8px);
+            background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.15);
+        }
+        /* Glass Square */
+        .style-glass-square .icon-display {
+            backdrop-filter: blur(8px);
+            background: rgba(91,154,154,0.12); border: 1.5px solid rgba(91,154,154,0.3);
+        }
+        .style-glass-square-accent .icon-display {
+            backdrop-filter: blur(8px);
+            background: rgba(255,107,53,0.12); border: 1.5px solid rgba(255,107,53,0.3);
+        }
+        /* Solid Teal */
+        .style-solid-teal .icon-display {
+            background: var(--teal); border-radius: 12px;
+        }
+        .style-solid-teal .icon-display span { filter: brightness(0) invert(0.05); }
+        /* Solid Accent */
+        .style-solid-accent .icon-display {
+            background: var(--accent); border-radius: 12px;
+        }
+        /* Outline */
+        .style-outline .icon-display {
+            background: transparent; border: 2px solid var(--teal); border-radius: 12px;
+        }
+        .style-outline-accent .icon-display {
+            background: transparent; border: 2px solid var(--accent); border-radius: 12px;
+        }
+        .style-outline-circle .icon-display {
+            background: transparent; border: 2px solid var(--teal); border-radius: 50%;
+        }
+        /* Glow */
+        .style-glow .icon-display {
+            background: rgba(91,154,154,0.1); border-radius: 50%;
+            box-shadow: 0 0 20px rgba(91,154,154,0.25), 0 0 40px rgba(91,154,154,0.1);
+            border: 1px solid rgba(91,154,154,0.3);
+        }
+        .style-glow-accent .icon-display {
+            background: rgba(255,107,53,0.1); border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255,107,53,0.25), 0 0 40px rgba(255,107,53,0.1);
+            border: 1px solid rgba(255,107,53,0.3);
+        }
+        /* Hex */
+        .style-hex .icon-display {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: rgba(91,154,154,0.15); border: none; border-radius: 0;
+        }
+        /* Diamond */
+        .style-diamond .icon-display {
+            transform: rotate(45deg); border-radius: 8px;
+            background: rgba(91,154,154,0.12); border: 1.5px solid rgba(91,154,154,0.3);
+        }
+        .style-diamond .icon-display span { transform: rotate(-45deg); display: block; }
+        /* Badge */
+        .style-badge .icon-display {
+            background: linear-gradient(135deg, var(--dark-teal), var(--teal)); border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(91,154,154,0.3);
+        }
+        .style-badge-accent .icon-display {
+            background: linear-gradient(135deg, #cc5020, var(--accent)); border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(255,107,53,0.3);
+        }
+        /* Pill */
+        .style-pill .icon-display {
+            width: auto; padding: 0 16px; border-radius: 24px; gap: 4px;
+            background: rgba(91,154,154,0.12); border: 1.5px solid rgba(91,154,154,0.3);
+        }
+        /* Corner notch */
+        .style-notch .icon-display {
+            background: rgba(91,154,154,0.1);
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+        }
+        /* Underline */
+        .style-underline .icon-display {
+            background: transparent; border-radius: 0;
+            border-bottom: 3px solid var(--teal);
+        }
+
+        .icon-label {
+            font-size: 9px; font-weight: 600; color: var(--gray);
+            text-transform: uppercase; letter-spacing: 0.5px;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+
+        /* ─── EMBLEM GRID ─── */
+        .emblem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .emblem-cell {
+            background: var(--bg2);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 18px 12px 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .emblem-cell:hover {
+            border-color: var(--teal);
+            transform: translateY(-2px);
+        }
+
+        .emblem-display {
+            display: inline-flex; align-items: center; justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .emblem-label {
+            font-size: 9px; font-weight: 600; color: var(--gray);
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        /* ─── STAMP ─── */
+        .stamp { display: inline-block; border: 2px solid; padding: 4px 12px; font-family: 'Space Grotesk'; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; transform: rotate(-3deg); }
+        .stamp-teal { border-color: var(--teal); color: var(--teal); }
+        .stamp-accent { border-color: var(--accent); color: var(--accent); }
+        .stamp-yellow { border-color: var(--accent2); color: var(--accent2); }
+        .stamp-white { border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.8); }
+        .stamp-green { border-color: var(--green); color: var(--green); }
+        .stamp-red { border-color: var(--red); color: var(--red); }
+
+        /* ─── NUMBER CIRCLE ─── */
+        .num-circle { width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'Space Grotesk'; font-weight: 900; font-size: 14px; }
+
+        /* ─── TAG/PILL ─── */
+        .pill { display: inline-flex; align-items: center; gap: 5px; padding: 5px 14px; border-radius: 20px; font-size: 10px; font-weight: 700; }
+
+        /* ─── BADGE ─── */
+        .badge-ring { width: 56px; height: 56px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
+
+        /* ─── CTA BTN ─── */
+        .cta { display: inline-block; padding: 8px 20px; border-radius: 22px; font-family: 'Space Grotesk'; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* ─── CORNER FRAME ─── */
+        .corner-frame { position: relative; width: 56px; height: 56px; }
+        .corner-frame div { position: absolute; width: 14px; height: 14px; }
+        .corner-frame .tl { top: 0; left: 0; border-top: 2px solid; border-left: 2px solid; }
+        .corner-frame .tr { top: 0; right: 0; border-top: 2px solid; border-right: 2px solid; }
+        .corner-frame .bl { bottom: 0; left: 0; border-bottom: 2px solid; border-left: 2px solid; }
+        .corner-frame .br { bottom: 0; right: 0; border-bottom: 2px solid; border-right: 2px solid; }
+
+        /* ─── DIVIDER STYLES ─── */
+        .div-line { height: 3px; border-radius: 2px; }
+
+        /* ─── PROGRESS ─── */
+        .prog-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+        .prog-fill { height: 100%; border-radius: 3px; }
+
+        /* ─── DOT ROW ─── */
+        .dot-row { display: flex; gap: 3px; justify-content: center; }
+        .dot { width: 6px; height: 6px; border-radius: 50%; }
+
+        /* ─── STYLE SELECTOR ─── */
+        .style-bar {
+            display: flex; gap: 6px; flex-wrap: wrap; margin: 16px 0;
+            padding: 10px 14px; background: var(--bg2); border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .style-btn {
+            padding: 4px 10px; border-radius: 12px; font-size: 9px; font-weight: 600;
+            color: var(--gray); cursor: pointer; transition: all 0.2s; border: 1px solid transparent;
+        }
+        .style-btn:hover, .style-btn.active { background: rgba(91,154,154,0.15); color: var(--teal); border-color: rgba(91,154,154,0.3); }
+
+        @media (max-width: 768px) {
+            .header { padding: 80px 16px 30px; }
+            .section, .category-sep { padding-left: 16px; padding-right: 16px; }
+            .icon-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; }
+            .emblem-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+            .nav-links { display: none; }
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+<nav class="top-nav">
+    <div class="nav-brand">THE COACH <span>CONSULTANT</span> — Icons & Emblems</div>
+    <div class="nav-links">
+        <a class="nav-link active" href="#ai">AI</a>
+        <a class="nav-link" href="#sales">Sales</a>
+        <a class="nav-link" href="#personal">Personal</a>
+        <a class="nav-link" href="#leads">Lead Gen</a>
+        <a class="nav-link" href="#mindset">Mindset</a>
+        <a class="nav-link" href="#business">Business</a>
+        <a class="nav-link" href="#emblems">Emblems</a>
+        <a class="nav-link" href="#elements">Elements</a>
+    </div>
+</nav>
+
+<div class="header">
+    <div class="section-tag">Design System — Icons, Logos & Emblems</div>
+    <h1>Icon & Emblem <span class="gradient-text">Library</span></h1>
+    <div class="divider"></div>
+    <p style="color: var(--gray); max-width: 560px; margin: 0 auto; font-size: 14px;">
+        200+ brand-consistent icons, emblems, badges, stamps, buttons, and UI elements. Every piece follows the design system. Drop onto any content.
+    </p>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- AI ICONS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="category-sep" id="ai">
+    <div class="cat-head">
+        <div class="cat-icon" style="background: rgba(91,154,154,0.15);">🤖</div>
+        <h2>AI & Technology</h2>
+        <span class="cat-count">36 icons</span>
+    </div>
+    <p style="color: var(--gray); font-size: 12px;">AI tools, automation, speed, technology, data, workflows.</p>
+</div>
+<div class="section">
+    <div class="style-bar">
+        <span style="font-size: 9px; color: var(--gray); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-right: 4px; display: flex; align-items: center;">Styles shown →</span>
+        <span class="style-btn active">Glass Circle</span>
+        <span class="style-btn">Glass Square</span>
+        <span class="style-btn">Outline</span>
+        <span class="style-btn">Glow</span>
+        <span class="style-btn">Badge</span>
+        <span class="style-btn">Hex</span>
+    </div>
+    <div class="icon-grid">
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🤖</span></div><div class="icon-label">AI / Bot</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🧠</span></div><div class="icon-label">Intelligence</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>⚡</span></div><div class="icon-label">Speed</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🚀</span></div><div class="icon-label">Launch</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>💡</span></div><div class="icon-label">Idea</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>⚙️</span></div><div class="icon-label">Automation</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>🔄</span></div><div class="icon-label">Workflow</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>📊</span></div><div class="icon-label">Analytics</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🔗</span></div><div class="icon-label">Integration</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🎯</span></div><div class="icon-label">Target</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>💻</span></div><div class="icon-label">Computer</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📱</span></div><div class="icon-label">Mobile</div></div>
+        <div class="icon-cell style-hex"><div class="icon-display"><span>🌐</span></div><div class="icon-label">Global / Web</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>📋</span></div><div class="icon-label">Prompt</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🔍</span></div><div class="icon-label">Search</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>✨</span></div><div class="icon-label">Magic / Gen</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🛠️</span></div><div class="icon-label">Tools</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>📡</span></div><div class="icon-label">Signal</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🤝</span></div><div class="icon-label">Connect</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🔮</span></div><div class="icon-label">Predict</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>📈</span></div><div class="icon-label">Growth</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>⏱️</span></div><div class="icon-label">Time Save</div></div>
+        <div class="icon-cell style-hex"><div class="icon-display"><span>🔐</span></div><div class="icon-label">Secure</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>📁</span></div><div class="icon-label">Files</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>🧪</span></div><div class="icon-label">Experiment</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🔧</span></div><div class="icon-label">Configure</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>📝</span></div><div class="icon-label">Transcribe</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🗂️</span></div><div class="icon-label">Organise</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>💬</span></div><div class="icon-label">Chat / DM</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🧩</span></div><div class="icon-label">Plugin</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>📌</span></div><div class="icon-label">Pin / Save</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🔊</span></div><div class="icon-label">Voice / Audio</div></div>
+        <div class="icon-cell style-hex"><div class="icon-display"><span>🏗️</span></div><div class="icon-label">Build</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>💎</span></div><div class="icon-label">Premium</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🧬</span></div><div class="icon-label">DNA / Core</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>🔋</span></div><div class="icon-label">Power</div></div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SALES ICONS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="category-sep" id="sales">
+    <div class="cat-head">
+        <div class="cat-icon" style="background: rgba(255,107,53,0.15);">💰</div>
+        <h2>Sales & Revenue</h2>
+        <span class="cat-count">34 icons</span>
+    </div>
+    <p style="color: var(--gray); font-size: 12px;">Money, conversions, offers, social proof, testimonials, closing.</p>
+</div>
+<div class="section">
+    <div class="icon-grid">
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>💰</span></div><div class="icon-label">Revenue</div></div>
+        <div class="icon-cell style-glass-square-accent"><div class="icon-display"><span>💵</span></div><div class="icon-label">Cash</div></div>
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>💳</span></div><div class="icon-label">Payment</div></div>
+        <div class="icon-cell style-glow-accent"><div class="icon-display"><span>🏆</span></div><div class="icon-label">Winner</div></div>
+        <div class="icon-cell style-glass-square-accent"><div class="icon-display"><span>⭐</span></div><div class="icon-label">Rating</div></div>
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>🎁</span></div><div class="icon-label">Offer / Gift</div></div>
+        <div class="icon-cell style-badge-accent"><div class="icon-display"><span>🔥</span></div><div class="icon-label">Hot / Trending</div></div>
+        <div class="icon-cell style-glass-square-accent"><div class="icon-display"><span>📞</span></div><div class="icon-label">Call / Sales</div></div>
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>✉️</span></div><div class="icon-label">Email</div></div>
+        <div class="icon-cell style-outline-accent"><div class="icon-display"><span>📢</span></div><div class="icon-label">Announce</div></div>
+        <div class="icon-cell style-glass-square-accent"><div class="icon-display"><span>🎯</span></div><div class="icon-label">Convert</div></div>
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>🤑</span></div><div class="icon-label">Profit</div></div>
+        <div class="icon-cell style-glow-accent"><div class="icon-display"><span>👑</span></div><div class="icon-label">Premium</div></div>
+        <div class="icon-cell style-glass-square-accent"><div class="icon-display"><span>🧾</span></div><div class="icon-label">Invoice</div></div>
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>📦</span></div><div class="icon-label">Package</div></div>
+        <div class="icon-cell style-badge-accent"><div class="icon-display"><span>🎖️</span></div><div class="icon-label">Medal</div></div>
+        <div class="icon-cell style-glass-square-accent"><div class="icon-display"><span>📣</span></div><div class="icon-label">Promote</div></div>
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>🔔</span></div><div class="icon-label">Alert</div></div>
+        <div class="icon-cell style-outline-accent"><div class="icon-display"><span>🏅</span></div><div class="icon-label">Award</div></div>
+        <div class="icon-cell style-glass-square-accent"><div class="icon-display"><span>🎟️</span></div><div class="icon-label">Ticket</div></div>
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>🛒</span></div><div class="icon-label">Cart</div></div>
+        <div class="icon-cell style-glow-accent"><div class="icon-display"><span>💯</span></div><div class="icon-label">Perfect</div></div>
+        <div class="icon-cell style-glass-square-accent"><div class="icon-display"><span>🤝</span></div><div class="icon-label">Deal</div></div>
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>📈</span></div><div class="icon-label">Uptrend</div></div>
+        <div class="icon-cell style-badge-accent"><div class="icon-display"><span>✅</span></div><div class="icon-label">Confirmed</div></div>
+        <div class="icon-cell style-glass-square-accent"><div class="icon-display"><span>🔑</span></div><div class="icon-label">Access</div></div>
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>💪</span></div><div class="icon-label">Strong</div></div>
+        <div class="icon-cell style-outline-accent"><div class="icon-display"><span>🚪</span></div><div class="icon-label">Open Door</div></div>
+        <div class="icon-cell style-glass-square-accent"><div class="icon-display"><span>📅</span></div><div class="icon-label">Book / Date</div></div>
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>🎯</span></div><div class="icon-label">Precision</div></div>
+        <div class="icon-cell style-glow-accent"><div class="icon-display"><span>🌟</span></div><div class="icon-label">Standout</div></div>
+        <div class="icon-cell style-glass-square-accent"><div class="icon-display"><span>📩</span></div><div class="icon-label">DM / Inbox</div></div>
+        <div class="icon-cell style-glass-circle-accent"><div class="icon-display"><span>🧲</span></div><div class="icon-label">Attract</div></div>
+        <div class="icon-cell style-badge-accent"><div class="icon-display"><span>💥</span></div><div class="icon-label">Impact</div></div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PERSONAL BRAND ICONS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="category-sep" id="personal">
+    <div class="cat-head">
+        <div class="cat-icon" style="background: rgba(155,109,255,0.15);">👤</div>
+        <h2>Personal Brand & Content</h2>
+        <span class="cat-count">34 icons</span>
+    </div>
+    <p style="color: var(--gray); font-size: 12px;">Identity, authority, content creation, social media, storytelling, video.</p>
+</div>
+<div class="section">
+    <div class="icon-grid">
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>👤</span></div><div class="icon-label">Profile</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🎥</span></div><div class="icon-label">Video</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📷</span></div><div class="icon-label">Photo</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>🎙️</span></div><div class="icon-label">Podcast</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>✍️</span></div><div class="icon-label">Write</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🎬</span></div><div class="icon-label">Produce</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>📱</span></div><div class="icon-label">Social</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🖥️</span></div><div class="icon-label">Screen</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🎨</span></div><div class="icon-label">Creative</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>✂️</span></div><div class="icon-label">Edit</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🗣️</span></div><div class="icon-label">Speak</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>👁️</span></div><div class="icon-label">Views</div></div>
+        <div class="icon-cell style-hex"><div class="icon-display"><span>❤️</span></div><div class="icon-label">Likes</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>💬</span></div><div class="icon-label">Comments</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🔁</span></div><div class="icon-label">Share</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>📌</span></div><div class="icon-label">Pin</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>📖</span></div><div class="icon-label">Story</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🎵</span></div><div class="icon-label">Audio</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>📺</span></div><div class="icon-label">Broadcast</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🖊️</span></div><div class="icon-label">Signature</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>👥</span></div><div class="icon-label">Audience</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🏷️</span></div><div class="icon-label">Tag</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>📲</span></div><div class="icon-label">Notification</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🔴</span></div><div class="icon-label">Live</div></div>
+        <div class="icon-cell style-hex"><div class="icon-display"><span>📸</span></div><div class="icon-label">Capture</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🎤</span></div><div class="icon-label">Mic</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>👁️‍🗨️</span></div><div class="icon-label">Insight</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🏠</span></div><div class="icon-label">Home</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🌍</span></div><div class="icon-label">Reach</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>📤</span></div><div class="icon-label">Post</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>💫</span></div><div class="icon-label">Highlight</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🔖</span></div><div class="icon-label">Save</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🎪</span></div><div class="icon-label">Event</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🪞</span></div><div class="icon-label">Reflect</div></div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- LEAD GEN ICONS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="category-sep" id="leads">
+    <div class="cat-head">
+        <div class="cat-icon" style="background: rgba(77,159,255,0.15);">🧲</div>
+        <h2>Lead Generation & Funnels</h2>
+        <span class="cat-count">32 icons</span>
+    </div>
+    <p style="color: var(--gray); font-size: 12px;">Funnels, magnets, downloads, quizzes, opt-ins, traffic, conversions.</p>
+</div>
+<div class="section">
+    <div class="icon-grid">
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🧲</span></div><div class="icon-label">Magnet</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>📥</span></div><div class="icon-label">Download</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📧</span></div><div class="icon-label">Email List</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>🎣</span></div><div class="icon-label">Hook</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🔔</span></div><div class="icon-label">Subscribe</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📊</span></div><div class="icon-label">Quiz</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>🎯</span></div><div class="icon-label">Funnel</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🔗</span></div><div class="icon-label">Link</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🆓</span></div><div class="icon-label">Free</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📄</span></div><div class="icon-label">PDF / Guide</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🎓</span></div><div class="icon-label">Course</div></div>
+        <div class="icon-cell style-hex"><div class="icon-display"><span>📑</span></div><div class="icon-label">Checklist</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🗓️</span></div><div class="icon-label">Calendar</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>🔓</span></div><div class="icon-label">Unlock</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>⏰</span></div><div class="icon-label">Deadline</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🏃</span></div><div class="icon-label">Fast Action</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>📬</span></div><div class="icon-label">Opt-in</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🔎</span></div><div class="icon-label">Discover</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📢</span></div><div class="icon-label">Broadcast</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🏁</span></div><div class="icon-label">Start</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🪄</span></div><div class="icon-label">Transform</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🗝️</span></div><div class="icon-label">Key Access</div></div>
+        <div class="icon-cell style-hex"><div class="icon-display"><span>📮</span></div><div class="icon-label">Submit</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🎫</span></div><div class="icon-label">Pass</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>🧭</span></div><div class="icon-label">Navigate</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📶</span></div><div class="icon-label">Traffic</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🔀</span></div><div class="icon-label">Split Test</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>👆</span></div><div class="icon-label">Click</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📍</span></div><div class="icon-label">Location</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🎰</span></div><div class="icon-label">Jackpot</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🧪</span></div><div class="icon-label">Test</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🗺️</span></div><div class="icon-label">Roadmap</div></div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- MINDSET ICONS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="category-sep" id="mindset">
+    <div class="cat-head">
+        <div class="cat-icon" style="background: rgba(255,209,102,0.15);">🧠</div>
+        <h2>Mindset & Personal Development</h2>
+        <span class="cat-count">34 icons</span>
+    </div>
+    <p style="color: var(--gray); font-size: 12px;">Motivation, discipline, resilience, growth, habits, mentality.</p>
+</div>
+<div class="section">
+    <div class="icon-grid">
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🧠</span></div><div class="icon-label">Mindset</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🔥</span></div><div class="icon-label">Fire / Drive</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>💪</span></div><div class="icon-label">Strength</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🏔️</span></div><div class="icon-label">Summit</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🌅</span></div><div class="icon-label">New Day</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🎯</span></div><div class="icon-label">Focus</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>⏰</span></div><div class="icon-label">Discipline</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🧘</span></div><div class="icon-label">Calm</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>📖</span></div><div class="icon-label">Learn</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🪜</span></div><div class="icon-label">Climb</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🛡️</span></div><div class="icon-label">Protect</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>⚔️</span></div><div class="icon-label">Battle</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🪨</span></div><div class="icon-label">Grounded</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🔄</span></div><div class="icon-label">Reset</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🌱</span></div><div class="icon-label">Grow</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🎖️</span></div><div class="icon-label">Earned</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>⛓️‍💥</span></div><div class="icon-label">Break Free</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🧭</span></div><div class="icon-label">Direction</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🫀</span></div><div class="icon-label">Heart</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🪞</span></div><div class="icon-label">Self-Reflect</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🌊</span></div><div class="icon-label">Flow</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>💡</span></div><div class="icon-label">Clarity</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🔑</span></div><div class="icon-label">Unlock</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🏋️</span></div><div class="icon-label">Grind</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🙏</span></div><div class="icon-label">Gratitude</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🎯</span></div><div class="icon-label">Intention</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🌙</span></div><div class="icon-label">Rest</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>⚡</span></div><div class="icon-label">Energy</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🧗</span></div><div class="icon-label">Overcome</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🔥</span></div><div class="icon-label">Ignite</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🎓</span></div><div class="icon-label">Master</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🧱</span></div><div class="icon-label">Foundation</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🌄</span></div><div class="icon-label">Vision</div></div>
+        <div class="icon-cell style-glass-circle-yellow"><div class="icon-display"><span>🦁</span></div><div class="icon-label">Courage</div></div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- BUSINESS ICONS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="category-sep" id="business">
+    <div class="cat-head">
+        <div class="cat-icon" style="background: rgba(68,255,136,0.15);">📈</div>
+        <h2>Business & Strategy</h2>
+        <span class="cat-count">34 icons</span>
+    </div>
+    <p style="color: var(--gray); font-size: 12px;">Strategy, scaling, pricing, team, systems, operations, leadership.</p>
+</div>
+<div class="section">
+    <div class="icon-grid">
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📈</span></div><div class="icon-label">Growth</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>📉</span></div><div class="icon-label">Decline</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🏢</span></div><div class="icon-label">Company</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>👔</span></div><div class="icon-label">Professional</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🤝</span></div><div class="icon-label">Partnership</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📋</span></div><div class="icon-label">Plan</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>🗂️</span></div><div class="icon-label">Systems</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>⚖️</span></div><div class="icon-label">Balance</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🏦</span></div><div class="icon-label">Finance</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📊</span></div><div class="icon-label">Data</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🎯</span></div><div class="icon-label">Strategy</div></div>
+        <div class="icon-cell style-hex"><div class="icon-display"><span>👥</span></div><div class="icon-label">Team</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🏗️</span></div><div class="icon-label">Build</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>📐</span></div><div class="icon-label">Structure</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>🧩</span></div><div class="icon-label">Fit</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🔧</span></div><div class="icon-label">Fix</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🗳️</span></div><div class="icon-label">Decision</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>📌</span></div><div class="icon-label">Priority</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🧮</span></div><div class="icon-label">Calculate</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🔄</span></div><div class="icon-label">Recurring</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🏆</span></div><div class="icon-label">Success</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📦</span></div><div class="icon-label">Product</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🎯</span></div><div class="icon-label">KPI</div></div>
+        <div class="icon-cell style-hex"><div class="icon-display"><span>🪜</span></div><div class="icon-label">Scale</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🧾</span></div><div class="icon-label">Contract</div></div>
+        <div class="icon-cell style-glow"><div class="icon-display"><span>💎</span></div><div class="icon-label">Value</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🗓️</span></div><div class="icon-label">Schedule</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>📝</span></div><div class="icon-label">Notes</div></div>
+        <div class="icon-cell style-outline"><div class="icon-display"><span>🧑‍💼</span></div><div class="icon-label">Client</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>🔒</span></div><div class="icon-label">Lock In</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🏷️</span></div><div class="icon-label">Price</div></div>
+        <div class="icon-cell style-badge"><div class="icon-display"><span>🚀</span></div><div class="icon-label">Launch</div></div>
+        <div class="icon-cell style-glass-square"><div class="icon-display"><span>📚</span></div><div class="icon-label">Resource</div></div>
+        <div class="icon-cell style-glass-circle"><div class="icon-display"><span>🛤️</span></div><div class="icon-label">Path</div></div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- EMBLEMS, STAMPS, BADGES -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="category-sep" id="emblems">
+    <div class="cat-head">
+        <div class="cat-icon" style="background: rgba(91,154,154,0.15);">🏛️</div>
+        <h2>Emblems, Stamps & Badges</h2>
+        <span class="cat-count">42 elements</span>
+    </div>
+    <p style="color: var(--gray); font-size: 12px;">Authority markers, labels, seals, status indicators. Drop onto any content for instant credibility.</p>
+</div>
+<div class="section">
+    <h3 style="margin-bottom: 4px; font-size: 14px;">Stamps</h3>
+    <p style="font-size: 11px; color: var(--gray); margin-bottom: 8px;">Rotated stamp badges. Use for labelling, authority, urgency, exclusivity.</p>
+    <div class="emblem-grid">
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-teal" style="font-size: 9px;">Gold Standard</span></div><div class="emblem-label">Authority</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-accent" style="font-size: 9px;">New</span></div><div class="emblem-label">Launch</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-yellow" style="font-size: 9px;">Premium</span></div><div class="emblem-label">Tier</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-green" style="font-size: 9px;">Approved</span></div><div class="emblem-label">Status</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-red" style="font-size: 9px;">Sold Out</span></div><div class="emblem-label">Scarcity</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-white" style="font-size: 9px;">Free</span></div><div class="emblem-label">Offer</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-teal" style="font-size: 9px;">Verified</span></div><div class="emblem-label">Trust</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-accent" style="font-size: 9px;">Limited</span></div><div class="emblem-label">Urgency</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-yellow" style="font-size: 9px;">VIP</span></div><div class="emblem-label">Exclusive</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-teal" style="font-size: 9px;">Framework</span></div><div class="emblem-label">Method</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-green" style="font-size: 9px;">Proven</span></div><div class="emblem-label">Track Record</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-accent" style="font-size: 9px;">Hot Take</span></div><div class="emblem-label">Opinion</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-red" style="font-size: 9px;">Myth</span></div><div class="emblem-label">Debunk</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="stamp stamp-teal" style="font-size: 9px;">Case Study</span></div><div class="emblem-label">Proof</div></div>
+    </div>
+
+    <h3 style="margin: 28px 0 4px; font-size: 14px;">Number Circles</h3>
+    <p style="font-size: 11px; color: var(--gray); margin-bottom: 8px;">Steps, rankings, lists, carousel page indicators.</p>
+    <div class="emblem-grid" style="grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));">
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="background: var(--teal); color: var(--bg);">1</span></div><div class="emblem-label">Teal</div></div>
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="background: var(--teal); color: var(--bg);">2</span></div><div class="emblem-label">Teal</div></div>
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="background: var(--teal); color: var(--bg);">3</span></div><div class="emblem-label">Teal</div></div>
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="background: var(--accent); color: var(--bg);">4</span></div><div class="emblem-label">Orange</div></div>
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="background: var(--accent); color: var(--bg);">5</span></div><div class="emblem-label">Orange</div></div>
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="background: var(--accent2); color: var(--bg);">6</span></div><div class="emblem-label">Yellow</div></div>
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="background: var(--accent2); color: var(--bg);">7</span></div><div class="emblem-label">Yellow</div></div>
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="border: 2px solid var(--teal); color: var(--teal);">1</span></div><div class="emblem-label">Outline</div></div>
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="border: 2px solid var(--accent); color: var(--accent);">2</span></div><div class="emblem-label">Outline</div></div>
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="background: var(--green); color: var(--bg);">✓</span></div><div class="emblem-label">Check</div></div>
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="background: var(--red); color: var(--white);">✗</span></div><div class="emblem-label">Cross</div></div>
+        <div class="emblem-cell" style="padding: 12px 4px 8px;"><div class="emblem-display"><span class="num-circle" style="background: var(--accent2); color: var(--bg);">!</span></div><div class="emblem-label">Alert</div></div>
+    </div>
+
+    <h3 style="margin: 28px 0 4px; font-size: 14px;">Pills & Tags</h3>
+    <p style="font-size: 11px; color: var(--gray); margin-bottom: 8px;">Category labels, platform badges, status indicators.</p>
+    <div class="emblem-grid" style="grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));">
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: rgba(91,154,154,0.2); color: var(--teal);">🤖 AI Content</span></div><div class="emblem-label">Category</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: rgba(255,107,53,0.2); color: var(--accent);">💰 Sales</span></div><div class="emblem-label">Category</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: rgba(255,209,102,0.2); color: var(--accent2);">🧠 Mindset</span></div><div class="emblem-label">Category</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: rgba(68,255,136,0.2); color: var(--green);">📈 Business</span></div><div class="emblem-label">Category</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: rgba(155,109,255,0.2); color: var(--purple);">👤 Brand</span></div><div class="emblem-label">Category</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: rgba(77,159,255,0.2); color: var(--blue);">🧲 Lead Gen</span></div><div class="emblem-label">Category</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: var(--teal); color: var(--bg);">Reel</span></div><div class="emblem-label">Format</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: var(--accent); color: var(--white);">Carousel</span></div><div class="emblem-label">Format</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--white);">Story</span></div><div class="emblem-label">Format</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: rgba(255,68,68,0.15); color: var(--red);"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--red);"></span> Live</span></div><div class="emblem-label">Status</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: rgba(68,255,136,0.15); color: var(--green);">✓ Done</span></div><div class="emblem-label">Status</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="pill" style="background: rgba(255,209,102,0.15); color: var(--accent2);">⏳ Pending</span></div><div class="emblem-label">Status</div></div>
+    </div>
+
+    <h3 style="margin: 28px 0 4px; font-size: 14px;">CTAs & Buttons</h3>
+    <p style="font-size: 11px; color: var(--gray); margin-bottom: 8px;">Call-to-action buttons for overlays, stories, end screens.</p>
+    <div class="emblem-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
+        <div class="emblem-cell"><div class="emblem-display"><span class="cta" style="background: var(--teal); color: var(--bg);">Book a Call</span></div><div class="emblem-label">Primary Teal</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="cta" style="background: var(--accent); color: var(--white);">DM "AI" Now</span></div><div class="emblem-label">Primary Orange</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="cta" style="background: var(--white); color: var(--bg);">Get Started</span></div><div class="emblem-label">Primary White</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="cta" style="border: 1.5px solid var(--teal); color: var(--teal); background: transparent;">Learn More</span></div><div class="emblem-label">Outline Teal</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="cta" style="border: 1.5px solid var(--accent); color: var(--accent); background: transparent;">Apply Now</span></div><div class="emblem-label">Outline Orange</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="cta" style="border: 1.5px solid var(--white); color: var(--white); background: transparent;">Watch Free</span></div><div class="emblem-label">Outline White</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="cta" style="background: linear-gradient(135deg, var(--teal), var(--accent)); color: var(--white);">Join Now →</span></div><div class="emblem-label">Gradient</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span class="cta" style="background: rgba(91,154,154,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(91,154,154,0.3); color: var(--teal);">Link in Bio</span></div><div class="emblem-label">Glass</div></div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- UI ELEMENTS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="category-sep" id="elements">
+    <div class="cat-head">
+        <div class="cat-icon" style="background: rgba(255,255,255,0.08);">🧱</div>
+        <h2>UI Elements & Decorators</h2>
+        <span class="cat-count">30+ elements</span>
+    </div>
+    <p style="color: var(--gray); font-size: 12px;">Dividers, progress bars, dot indicators, corner frames, watermarks. The building blocks.</p>
+</div>
+<div class="section">
+
+    <h3 style="margin-bottom: 4px; font-size: 14px;">Dividers</h3>
+    <div class="emblem-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="div-line" style="width: 60px; background: var(--teal);"></div></div><div class="emblem-label">Teal Short</div></div>
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="div-line" style="width: 100%; background: var(--teal);"></div></div><div class="emblem-label">Teal Full</div></div>
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="div-line" style="width: 60px; background: var(--accent);"></div></div><div class="emblem-label">Orange Short</div></div>
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="div-line" style="width: 100%; background: linear-gradient(90deg, var(--teal), transparent);"></div></div><div class="emblem-label">Teal Fade</div></div>
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="div-line" style="width: 100%; background: linear-gradient(90deg, var(--accent), transparent);"></div></div><div class="emblem-label">Orange Fade</div></div>
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="div-line" style="width: 100%; background: linear-gradient(90deg, var(--teal), var(--accent));"></div></div><div class="emblem-label">Gradient</div></div>
+    </div>
+
+    <h3 style="margin: 28px 0 4px; font-size: 14px;">Progress Bars</h3>
+    <div class="emblem-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="prog-bar"><div class="prog-fill" style="width: 40%; background: var(--teal);"></div></div></div><div class="emblem-label">Teal 40%</div></div>
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="prog-bar"><div class="prog-fill" style="width: 70%; background: var(--accent);"></div></div></div><div class="emblem-label">Orange 70%</div></div>
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="prog-bar"><div class="prog-fill" style="width: 85%; background: var(--green);"></div></div></div><div class="emblem-label">Green 85%</div></div>
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="prog-bar"><div class="prog-fill" style="width: 25%; background: var(--red);"></div></div></div><div class="emblem-label">Red 25%</div></div>
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="prog-bar"><div class="prog-fill" style="width: 60%; background: linear-gradient(90deg, var(--teal), var(--green));"></div></div></div><div class="emblem-label">Gradient</div></div>
+        <div class="emblem-cell"><div class="emblem-display" style="width: 100%;"><div class="prog-bar"><div class="prog-fill" style="width: 100%; background: linear-gradient(90deg, var(--red), var(--accent), var(--accent2), var(--green));"></div></div></div><div class="emblem-label">Spectrum</div></div>
+    </div>
+
+    <h3 style="margin: 28px 0 4px; font-size: 14px;">Dot Indicators</h3>
+    <div class="emblem-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
+        <div class="emblem-cell"><div class="emblem-display"><div class="dot-row"><div class="dot" style="background: var(--teal);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div></div></div><div class="emblem-label">Page 1 of 5</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><div class="dot-row"><div class="dot" style="background: var(--teal);"></div><div class="dot" style="background: var(--teal);"></div><div class="dot" style="background: var(--teal);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div></div></div><div class="emblem-label">3 of 5 filled</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><div class="dot-row"><div class="dot" style="background: var(--green);"></div><div class="dot" style="background: var(--green);"></div><div class="dot" style="background: var(--green);"></div><div class="dot" style="background: var(--green);"></div><div class="dot" style="background: var(--green);"></div></div></div><div class="emblem-label">All complete</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><div class="dot-row"><div class="dot" style="background: var(--red);"></div><div class="dot" style="background: var(--red);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div><div class="dot" style="background: rgba(255,255,255,0.15);"></div></div></div><div class="emblem-label">Spots (2 of 8)</div></div>
+    </div>
+
+    <h3 style="margin: 28px 0 4px; font-size: 14px;">Corner Frames</h3>
+    <div class="emblem-grid" style="grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));">
+        <div class="emblem-cell"><div class="emblem-display"><div class="corner-frame"><div class="tl" style="border-color: var(--teal);"></div><div class="tr" style="border-color: var(--teal);"></div><div class="bl" style="border-color: var(--teal);"></div><div class="br" style="border-color: var(--teal);"></div></div></div><div class="emblem-label">Teal Frame</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><div class="corner-frame"><div class="tl" style="border-color: var(--accent);"></div><div class="tr" style="border-color: var(--accent);"></div><div class="bl" style="border-color: var(--accent);"></div><div class="br" style="border-color: var(--accent);"></div></div></div><div class="emblem-label">Orange Frame</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><div class="corner-frame"><div class="tl" style="border-color: var(--white); opacity: 0.3;"></div><div class="tr" style="border-color: var(--white); opacity: 0.3;"></div><div class="bl" style="border-color: var(--white); opacity: 0.3;"></div><div class="br" style="border-color: var(--white); opacity: 0.3;"></div></div></div><div class="emblem-label">White Frame</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><div class="corner-frame"><div class="tl" style="border-color: var(--teal);"></div><div class="br" style="border-color: var(--accent);"></div></div></div><div class="emblem-label">Diagonal</div></div>
+    </div>
+
+    <h3 style="margin: 28px 0 4px; font-size: 14px;">Watermarks</h3>
+    <div class="emblem-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+        <div class="emblem-cell"><div class="emblem-display"><span style="font-family: 'Space Grotesk'; font-weight: 800; font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,0.15);">THE COACH <span style="color: rgba(91,154,154,0.3);">CONSULTANT</span></span></div><div class="emblem-label">Light Watermark</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span style="font-family: 'Space Grotesk'; font-weight: 800; font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,0.4);">THE COACH <span style="color: rgba(91,154,154,0.6);">CONSULTANT</span></span></div><div class="emblem-label">Medium Watermark</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span style="font-family: 'Space Grotesk'; font-weight: 800; font-size: 9px; letter-spacing: 1px; color: var(--white);">THE COACH <span style="color: var(--teal);">CONSULTANT</span></span></div><div class="emblem-label">Full Logo Text</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span style="font-family: 'Space Grotesk'; font-weight: 800; font-size: 11px; color: var(--white); position: relative; display: inline-block;">THE COACH<br><span style="position: relative; z-index: 1;">CONSULTANT</span><span style="position: absolute; bottom: 0; left: -3px; right: -3px; height: 40%; background: var(--teal); opacity: 0.4; border-radius: 2px 6px 2px 4px; z-index: 0;"></span></span></div><div class="emblem-label">Brushstroke Logo</div></div>
+    </div>
+
+    <h3 style="margin: 28px 0 4px; font-size: 14px;">Arrows & Connectors</h3>
+    <div class="emblem-grid" style="grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));">
+        <div class="emblem-cell"><div class="emblem-display"><span style="font-size: 20px; color: var(--teal);">→</span></div><div class="emblem-label">Right</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span style="font-size: 20px; color: var(--teal);">↓</span></div><div class="emblem-label">Down</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span style="font-size: 20px; color: var(--teal);">↗</span></div><div class="emblem-label">Up-Right</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span style="font-size: 20px; color: var(--accent);">⟱</span></div><div class="emblem-label">Transform</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span style="font-size: 20px; color: var(--teal);">⇄</span></div><div class="emblem-label">Compare</div></div>
+        <div class="emblem-cell"><div class="emblem-display"><span style="font-family: 'Space Grotesk'; font-weight: 900; font-size: 16px; color: var(--accent);">vs</span></div><div class="emblem-label">Versus</div></div>
+    </div>
+</div>
+
+
+<!-- FOOTER -->
+<div style="padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div style="font-family: 'Space Grotesk'; font-weight: 800; font-size: 14px; margin-bottom: 4px;">THE COACH <span style="color: var(--teal);">CONSULTANT</span></div>
+    <div style="font-size: 10px; color: var(--gray);">Icon & Emblem Library — March 2026</div>
+    <div style="font-size: 9px; color: rgba(255,255,255,0.2); margin-top: 10px;">200+ elements across 8 categories. All on-brand. All reusable.</div>
+</div>
+
+<script>
+    document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', function(){ document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active')); this.classList.add('active'); }));
+    const ss = document.querySelectorAll('.category-sep');
+    const nl = document.querySelectorAll('.nav-link');
+    const o = new IntersectionObserver(e => { e.forEach(en => { if(en.isIntersecting){ const id=en.target.id; nl.forEach(n=>n.classList.toggle('active',n.getAttribute('href')==='#'+id)); }}); }, {threshold:0.3,rootMargin:'-60px 0px 0px 0px'});
+    ss.forEach(s => { if(s.id) o.observe(s); });
+</script>
+
+</body>
+</html>
