@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGL Film House — Strategic Recovery & Growth Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #5B9A9A;
+            --dark-teal: #3d7a7a;
+            --light-teal: #7abfbf;
+            --accent: #FF6B35;
+            --accent2: #FFD166;
+            --bg: #0a0a0a;
+            --bg2: #141414;
+            --white: #ffffff;
+            --gray: #aaaaaa;
+            --red: #ff4444;
+            --green: #44ff88;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ─── SLIDE SYSTEM ─── */
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .slide:nth-child(odd)::before {
+            background: var(--teal);
+        }
+
+        .slide:nth-child(even)::before {
+            background: var(--accent);
+        }
+
+        .slide-inner {
+            max-width: 1100px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* ─── TYPOGRAPHY ─── */
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(36px, 5vw, 72px);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(28px, 3.5vw, 52px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(20px, 2.5vw, 32px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(16px, 1.8vw, 22px);
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--teal);
+        }
+
+        p, li {
+            font-size: clamp(15px, 1.5vw, 19px);
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .highlight { color: var(--teal); }
+        .accent { color: var(--accent); }
+        .accent2 { color: var(--accent2); }
+        .bold { font-weight: 700; color: var(--white); }
+        .red { color: var(--red); }
+        .green { color: var(--green); }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--light-teal), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ─── DIVIDERS ─── */
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--teal);
+            margin: 24px 0;
+            border-radius: 2px;
+        }
+
+        .divider-accent {
+            background: var(--accent);
+        }
+
+        .divider-center {
+            margin: 24px auto;
+        }
+
+        /* ─── CARDS ─── */
+        .card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            border-color: var(--teal);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(91,154,154,0.1);
+        }
+
+        .card-accent {
+            border-left: 4px solid var(--accent);
+        }
+
+        .card-teal {
+            border-left: 4px solid var(--teal);
+        }
+
+        .card-yellow {
+            border-left: 4px solid var(--accent2);
+        }
+
+        .card-red {
+            border-left: 4px solid var(--red);
+        }
+
+        .card-green {
+            border-left: 4px solid var(--green);
+        }
+
+        /* ─── GRID ─── */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* ─── METRICS ─── */
+        .metric-big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(48px, 7vw, 100px);
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gray);
+            margin-top: 8px;
+        }
+
+        .metric-row {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .metric-item {
+            text-align: center;
+        }
+
+        /* ─── TIMELINE ─── */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--teal), var(--accent));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--teal);
+            border: 3px solid var(--bg);
+        }
+
+        /* ─── TAGS ─── */
+        .tag {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .tag-teal { background: rgba(91,154,154,0.2); color: var(--teal); }
+        .tag-accent { background: rgba(255,107,53,0.2); color: var(--accent); }
+        .tag-yellow { background: rgba(255,209,102,0.2); color: var(--accent2); }
+        .tag-red { background: rgba(255,68,68,0.2); color: var(--red); }
+        .tag-green { background: rgba(68,255,136,0.2); color: var(--green); }
+
+        /* ─── PROGRESS BAR ─── */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        .progress-teal { background: linear-gradient(90deg, var(--dark-teal), var(--light-teal)); }
+        .progress-accent { background: linear-gradient(90deg, var(--accent), #ff8f65); }
+        .progress-red { background: linear-gradient(90deg, #cc3333, var(--red)); }
+
+        /* ─── QUOTE ─── */
+        .quote {
+            font-size: clamp(20px, 2.5vw, 32px);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--white);
+            border-left: 4px solid var(--accent);
+            padding-left: 28px;
+            margin: 32px 0;
+            line-height: 1.5;
+        }
+
+        /* ─── SECTION HEADER ─── */
+        .section-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--teal);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        /* ─── LIST STYLES ─── */
+        ul { list-style: none; padding: 0; }
+
+        ul li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        ol {
+            padding-left: 0;
+            counter-reset: item;
+            list-style: none;
+        }
+
+        ol li {
+            padding: 12px 0 12px 40px;
+            position: relative;
+            counter-increment: item;
+        }
+
+        ol li::before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 28px;
+            height: 28px;
+            background: var(--teal);
+            color: var(--bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* ─── COMPARISON TABLE ─── */
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1fr 40px 1fr;
+            gap: 16px;
+            align-items: start;
+            margin-bottom: 16px;
+        }
+
+        .compare-vs {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
+            color: var(--accent);
+            text-align: center;
+            padding-top: 12px;
+        }
+
+        /* ─── BACKGROUNDS ─── */
+        .bg-gradient1 {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a2a2a 100%);
+        }
+
+        .bg-gradient2 {
+            background: linear-gradient(135deg, var(--bg) 0%, #1a1a0a 100%);
+        }
+
+        .bg-dark2 {
+            background: var(--bg2);
+        }
+
+        /* ─── CONFIDENTIAL BANNER ─── */
+        .confidential-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,68,68,0.15);
+            border-bottom: 1px solid rgba(255,68,68,0.3);
+            padding: 8px 20px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--red);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        /* ─── SCROLL ANIMATIONS ─── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── NAV DOTS ─── */
+        .nav-dots {
+            position: fixed;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: var(--teal);
+            transform: scale(1.4);
+        }
+
+        .nav-dot:hover {
+            background: var(--light-teal);
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .slide { padding: 60px 24px; }
+            .metric-row { gap: 30px; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .compare-row { grid-template-columns: 1fr; }
+            .compare-vs { display: none; }
+            .nav-dots { display: none; }
+        }
+
+        /* ─── PARTICLES ─── */
+        .particles {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--teal);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float-particle var(--duration) ease-in-out infinite;
+            animation-delay: var(--delay);
+        }
+
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.15; }
+            50% { transform: translateY(-80px) translateX(20px); opacity: 0.3; }
+        }
+
+        /* ─── GLOW ─── */
+        .glow {
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(91,154,154,0.1); }
+            50% { box-shadow: 0 0 40px rgba(91,154,154,0.25); }
+        }
+
+        .stamp {
+            display: inline-block;
+            border: 3px solid;
+            padding: 6px 18px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transform: rotate(-3deg);
+        }
+
+        .stamp-red { border-color: var(--red); color: var(--red); }
+        .stamp-green { border-color: var(--green); color: var(--green); }
+        .stamp-teal { border-color: var(--teal); color: var(--teal); }
+    </style>
+</head>
+<body>
+
+<div class="confidential-banner">CONFIDENTIAL — Prepared exclusively for Gus Napper / RGL Film House — Not for distribution</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 1: TITLE -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-gradient1" style="padding-top: 120px;">
+    <div class="particles" id="particles-1"></div>
+    <div class="slide-inner" style="text-align: center;">
+        <div class="section-tag">Strategic Recovery & Growth Report</div>
+        <h1>The <span class="gradient-text">Comeback</span> Playbook</h1>
+        <div class="divider divider-center"></div>
+        <p style="font-size: clamp(18px, 2vw, 24px); color: var(--white); max-width: 700px; margin: 0 auto 40px;">
+            A brutally honest, AI-accelerated strategy for RGL Film House to stop the bleed, rebuild the top end, and become the undisputed authority in creative business coaching.
+        </p>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <span class="tag tag-red">40% Revenue Loss</span>
+            <span class="tag tag-teal">Gold Standard DNA</span>
+            <span class="tag tag-accent">AI-Powered Recovery</span>
+            <span class="tag tag-green">The Path Forward</span>
+        </div>
+        <p style="margin-top: 60px; font-size: 13px; color: rgba(255,255,255,0.3);">Prepared March 2026 — For Gus Napper's eyes only</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 2: I HEAR YOU -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">Before anything else</div>
+        <h2>I hear every word of this, Gus.</h2>
+        <div class="divider"></div>
+
+        <div class="quote">
+            "The gold standard is the best it's ever been; the results are the best they've ever been and I have never had more people leave me in the past six months."
+        </div>
+
+        <p style="color: var(--white); font-size: 18px; margin: 24px 0;">
+            That sentence right there is the most painful thing a coach can say. Because it means the problem isn't quality — it's positioning, speed, and perception. Let's break down everything you said, piece by piece, with zero sugarcoating.
+        </p>
+
+        <div class="grid-2" style="margin-top: 32px;">
+            <div class="card card-red">
+                <h4 style="color: var(--red);">What's actually happening</h4>
+                <ul>
+                    <li><span class="bold">40% revenue loss</span> — primarily 1:1 clients at the top end</li>
+                    <li><span class="bold">Poaching pattern</span> — competitors waiting at the 10-15k threshold</li>
+                    <li><span class="bold">Professional exits</span> — scripted "new direction" messages, no real dialogue</li>
+                    <li><span class="bold">Internal erosion</span> — your own community members idolising people who have a foot in both camps</li>
+                    <li><span class="bold">Financial pressure</span> — struggling to pay your team, never mind yourself</li>
+                </ul>
+            </div>
+            <div class="card card-green">
+                <h4 style="color: var(--green);">What's actually true</h4>
+                <ul>
+                    <li><span class="bold">Your coaching works</span> — you get people to 5k, 10k, 15k consistently</li>
+                    <li><span class="bold">Bottom end is fixed</span> — Joe Parish helped plug the retention leak at entry level</li>
+                    <li><span class="bold">Community is incredible</span> — creative coach + personal development coach in place</li>
+                    <li><span class="bold">Gold Standard is proven</span> — the methodology delivers real results</li>
+                    <li><span class="bold">60+ videographers mentored</span> — that track record is irreplaceable</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 3: THE REAL DIAGNOSIS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-dark2">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">Diagnosis</div>
+        <h2>This isn't about you being <span class="red">bad</span>.<br>It's about the market moving <span class="accent">faster than your offer</span>.</h2>
+        <div class="divider divider-accent"></div>
+
+        <p style="color: var(--white); font-size: 18px; margin-bottom: 32px;">
+            Here's the hard truth, mate: everything you said about needing to "stay at 10-15k for a year to build tissue" — that was right in 2022. It's not right anymore. The market has fundamentally shifted:
+        </p>
+
+        <div class="grid-3">
+            <div class="card card-accent">
+                <h4>AI compressed timelines</h4>
+                <p>What used to take 12 months of coaching now takes 3. AI tools handle editing workflows, content planning, lead gen copy, financial tracking, and client onboarding. <span class="bold">Your competitors aren't smarter — they're faster because they use AI to collapse the timeline.</span></p>
+            </div>
+            <div class="card card-accent">
+                <h4>Personal brand is king</h4>
+                <p>In 2026, the coach with the strongest personal brand wins — not the coach with the best methodology. Your clients leave because <span class="bold">someone else looks more exciting on Instagram</span>, not because they coach better. Perception is beating substance.</p>
+            </div>
+            <div class="card card-accent">
+                <h4>Facebook ads = instant authority</h4>
+                <p>Ads coaches sell speed and scale. They promise "double revenue" and "automate everything." <span class="bold">It's a compelling offer to someone who's been grinding DMs for 18 months under your guidance.</span> Even if you know ads expose a bad business — they don't know that yet.</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 32px; text-align: center;">
+            <p style="color: var(--white); font-size: 20px; font-weight: 600;">
+                You're not losing to better coaches. You're losing to <span class="accent">faster promises</span> wrapped in <span class="accent">better marketing</span>.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 4: THE HEARTBREAK ACKNOWLEDGED -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">The emotional reality</div>
+        <h2>Let's talk about the <span class="highlight">heartbreak</span>.</h2>
+        <div class="divider"></div>
+
+        <p style="color: var(--white); font-size: 18px; margin-bottom: 24px;">
+            You built careers for people. Some of these coaches who are now poaching your clients were <span class="bold">coached by you</span>. Their team members were coached by you. You didn't just teach them videography — you taught them how to think about business. And now they're using that foundation to pull your clients away.
+        </p>
+
+        <p style="color: var(--white); font-size: 18px; margin-bottom: 24px;">
+            That's not just a business problem. That's a betrayal. And you're allowed to feel that.
+        </p>
+
+        <p style="color: var(--white); font-size: 18px; margin-bottom: 24px;">
+            You said you're worried about being a "laughing stock." You're not. But I need you to hear this: <span class="accent bold">the longer you sit in the hurt without moving, the more that narrative becomes real — not because it's true, but because silence in this market gets interpreted as decline.</span>
+        </p>
+
+        <div class="card card-teal" style="margin-top: 32px;">
+            <h4>The self-awareness you already have</h4>
+            <p style="color: var(--white);">You said it yourself: <em>"This is a reflection of me and what I have or have not coached myself in."</em> That level of ownership is rare. Most coaches at 39, five years deep, would blame the market, blame Gen Z, blame the algorithm. You're looking inward. That's the foundation everything else gets built on. Don't lose that — but don't let it paralyse you either.</p>
+        </div>
+
+        <div class="card card-teal" style="margin-top: 16px;">
+            <h4>On being "bored of dickheads"</h4>
+            <p style="color: var(--white);">That's not burnout talking — that's a man who's outgrown his own business model. When the humans you serve are draining you more than they energise you, <span class="bold">the model needs to change, not your tolerance levels.</span> This is actually a signal pointing you toward Option 2, and it's a valid signal.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 5: OPTION 1 vs OPTION 2 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-gradient1">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">The two options you presented</div>
+        <h2>Neither option is wrong.<br><span class="gradient-text">But there's a third option you haven't seen.</span></h2>
+        <div class="divider"></div>
+
+        <div class="grid-2">
+            <div class="card card-accent glow">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <h3 style="margin: 0;">Option 1</h3>
+                    <span class="stamp stamp-red">Risky</span>
+                </div>
+                <h4 style="color: var(--accent);">Gloves off. Dominate. Crush everyone.</h4>
+                <ul>
+                    <li>Infiltrate competitor businesses</li>
+                    <li>Hire business coaches for AI, ads, automation</li>
+                    <li>Build staged 0-200k roadmap</li>
+                    <li>Become the everything-coach</li>
+                </ul>
+                <div class="divider divider-accent" style="margin: 16px 0;"></div>
+                <p><span class="bold red">Risk:</span> You're entering a war on terrain your enemies chose. You'd be learning Facebook ads and AI from scratch while they've been doing it for years. It's reactive, not strategic. It also burns you out faster — you're already tired of the human element.</p>
+                <p style="margin-top: 8px;"><span class="bold green">What's good here:</span> The staged revenue roadmap (0-3k, 3k-5k, 5k-10k, 10k+) is <span class="bold">brilliant</span>. That structure is the answer. Just not delivered the way you're imagining it.</p>
+            </div>
+
+            <div class="card card-teal glow">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <h3 style="margin: 0;">Option 2</h3>
+                    <span class="stamp stamp-teal">Closer</span>
+                </div>
+                <h4 style="color: var(--teal);">Fuck humans. Go full e-product.</h4>
+                <ul>
+                    <li>No more 1:1 coaching dependency</li>
+                    <li>Sell digital products + subscriptions</li>
+                    <li>Gold Standard website as the engine</li>
+                    <li>Marketing through content, not calls</li>
+                </ul>
+                <div class="divider" style="margin: 16px 0;"></div>
+                <p><span class="bold red">Risk:</span> Pure e-product without any human touchpoint has a 10-15% completion rate. You'd be leaving money on the table and losing the thing that makes you irreplaceable — your actual coaching ability.</p>
+                <p style="margin-top: 8px;"><span class="bold green">What's good here:</span> The instinct to remove yourself from the daily grind and leverage your IP is <span class="bold">exactly right</span>. You're also right that your product is now strong enough to stand alone.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 6: OPTION 3 — THE HYBRID -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-dark2">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">The recommendation</div>
+        <h2>Option 3: <span class="gradient-text">The AI-Powered Hybrid</span></h2>
+        <div class="divider"></div>
+
+        <p style="color: var(--white); font-size: 20px; margin-bottom: 16px; font-weight: 600;">
+            Take the best of both options. Kill the rest. Accelerate everything with AI.
+        </p>
+        <p style="color: var(--gray); font-size: 18px; margin-bottom: 40px;">
+            This isn't "do a bit of both." This is a complete restructure of how RGL operates — designed to make you unfuckwithable within 90 days.
+        </p>
+
+        <div class="metric-row" style="justify-content: center;">
+            <div class="metric-item">
+                <div class="metric-big highlight">3</div>
+                <div class="metric-label">Revenue tiers</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-big accent">90</div>
+                <div class="metric-label">Day sprint</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-big accent2">1</div>
+                <div class="metric-label">Core IP engine</div>
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center; margin-top: 20px;">
+            <p style="color: var(--white); font-size: 18px;">
+                <span class="bold">The model:</span> E-product at the front door. Community in the middle. Premium 1:1 only for 10k+ clients who've <em>earned</em> access. AI automates 70% of what you currently do manually.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 7: THE THREE TIERS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">The new RGL structure</div>
+        <h2>Your staged revenue roadmap — <span class="highlight">rebuilt for speed</span></h2>
+        <div class="divider"></div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 8px;">
+                    <h3 style="margin: 0;">Tier 1: The Foundation</h3>
+                    <span class="tag tag-teal">0 — 5K/month</span>
+                </div>
+                <div class="card card-teal">
+                    <p style="color: var(--white); font-weight: 600; margin-bottom: 12px;">E-product + Gold Standard Community access</p>
+                    <ul>
+                        <li><span class="bold">Delivery:</span> Self-paced Gold Standard course library + weekly group calls + community forum</li>
+                        <li><span class="bold">AI integration:</span> AI-powered onboarding quiz that creates a personalised 90-day roadmap for every new member. No human required.</li>
+                        <li><span class="bold">Content:</span> Spec work templates, portfolio builders, outreach scripts — all AI-generated from your existing IP</li>
+                        <li><span class="bold">Price point:</span> £97-£197/month subscription</li>
+                        <li><span class="bold">Your time:</span> 2-3 hours per week (group calls only)</li>
+                    </ul>
+                    <p style="margin-top: 12px;"><span class="accent bold">Why this works:</span> This is where 80% of your market lives. They need the roadmap, not you personally. Your creative coach and personal development coach run this tier. You barely touch it.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 8px;">
+                    <h3 style="margin: 0;">Tier 2: The Accelerator</h3>
+                    <span class="tag tag-accent">5K — 15K/month</span>
+                </div>
+                <div class="card card-accent">
+                    <p style="color: var(--white); font-weight: 600; margin-bottom: 12px;">Group coaching + AI-powered scaling tools</p>
+                    <ul>
+                        <li><span class="bold">Delivery:</span> Small group coaching (max 8 per cohort), bi-weekly hot seats, positioning workshops</li>
+                        <li><span class="bold">AI integration:</span> Each member gets an AI business dashboard — tracks revenue, client pipeline, content performance. Automated weekly reports.</li>
+                        <li><span class="bold">Content:</span> Authority building (talk-to-cameras), rate increase frameworks, team hiring SOPs, lead gen systems (including basic ads training)</li>
+                        <li><span class="bold">Price point:</span> £497-£997/month</li>
+                        <li><span class="bold">Your time:</span> 4-6 hours per week</li>
+                    </ul>
+                    <p style="margin-top: 12px;"><span class="accent bold">This is where you stop the bleeding.</span> The people leaving at 10-15k are leaving because there's no next step visible. This tier IS the next step. They can see it. They can aspire to it. And it includes the things they're leaving for — ads, automation, scaling — but inside your ecosystem.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 8px;">
+                    <h3 style="margin: 0;">Tier 3: The Inner Circle</h3>
+                    <span class="tag tag-yellow">15K+ / month</span>
+                </div>
+                <div class="card card-yellow">
+                    <p style="color: var(--white); font-weight: 600; margin-bottom: 12px;">Premium 1:1 — application only — limited seats</p>
+                    <ul>
+                        <li><span class="bold">Delivery:</span> 1:1 with Gus, quarterly strategy days, direct access</li>
+                        <li><span class="bold">AI integration:</span> Fully AI-managed business operations review — you focus purely on strategy and vision with the client</li>
+                        <li><span class="bold">Content:</span> Brand partnerships, multi-six figure positioning, team scaling, exit strategies</li>
+                        <li><span class="bold">Price point:</span> £2,000-£3,000/month — <span class="bold">application only</span></li>
+                        <li><span class="bold">Your time:</span> 2-3 clients maximum. Your energy goes here because this is where it matters most.</li>
+                    </ul>
+                    <p style="margin-top: 12px;"><span class="accent bold">Scarcity is the play.</span> You don't take everyone. You take the people who've proven they belong. This makes the 5-15k tier desperate to qualify. It makes leaving feel like losing, not graduating.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 8: AI ACCELERATION -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-gradient1">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">The AI multiplier</div>
+        <h2>Run your entire IP through AI.<br><span class="gradient-text">Get 12-month results in 90 days.</span></h2>
+        <div class="divider"></div>
+
+        <p style="color: var(--white); font-size: 18px; margin-bottom: 40px;">
+            You said it yourself — you've spent 5 years building one of the best coaching products in the industry. That IP is sitting in your head, in your calls, in your community. Here's exactly how to weaponise it with AI:
+        </p>
+
+        <div class="grid-2">
+            <div class="card card-teal">
+                <h4>1. IP Extraction Sprint (Week 1-2)</h4>
+                <ul>
+                    <li>Record yourself teaching every module of the Gold Standard — voice notes, screen shares, raw and unfiltered</li>
+                    <li>Feed every recording through AI transcription (Whisper/Claude)</li>
+                    <li>AI structures it into: course modules, email sequences, social posts, PDF guides, workshop outlines</li>
+                    <li><span class="bold accent">Output:</span> 50+ pieces of structured content from your existing knowledge</li>
+                </ul>
+            </div>
+            <div class="card card-teal">
+                <h4>2. AI Coaching Assistant (Week 2-4)</h4>
+                <ul>
+                    <li>Build a custom AI assistant trained on your Gold Standard methodology</li>
+                    <li>It answers member questions 24/7 in your voice, using your frameworks</li>
+                    <li>Members get instant support without waiting for your next call</li>
+                    <li><span class="bold accent">Output:</span> 70% reduction in repetitive coaching questions you answer personally</li>
+                </ul>
+            </div>
+            <div class="card card-accent">
+                <h4>3. Automated Onboarding (Week 3-4)</h4>
+                <ul>
+                    <li>New member fills out AI-powered diagnostic quiz</li>
+                    <li>AI generates personalised 90-day roadmap based on their revenue, niche, and experience</li>
+                    <li>Automated email sequence delivers the right content at the right time</li>
+                    <li><span class="bold accent">Output:</span> Every member feels like they got a 1:1 plan without taking a second of your time</li>
+                </ul>
+            </div>
+            <div class="card card-accent">
+                <h4>4. Content Machine (Ongoing)</h4>
+                <ul>
+                    <li>Every coaching call gets recorded → AI creates 10+ social clips, carousels, and quote graphics</li>
+                    <li>AI writes your email newsletter from call highlights</li>
+                    <li>AI repurposes case studies into ads-ready testimonial content</li>
+                    <li><span class="bold accent">Output:</span> 30+ pieces of content per week without hiring a content team</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 24px; text-align: center; border-color: var(--accent);">
+            <p style="color: var(--white); font-size: 18px;">
+                <span class="accent bold">The coaches poaching your clients aren't teaching anything you can't teach.</span><br>
+                They're just delivering it faster and packaging it better. AI lets you match their speed while keeping your depth.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 9: INSTAGRAM AUDIT -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-dark2">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">Instagram Audit — @rglfilmhouse</div>
+        <h2>Your content is <span class="red">underperforming your ability</span>.</h2>
+        <div class="divider divider-accent"></div>
+
+        <p style="color: var(--white); font-size: 18px; margin-bottom: 16px;">
+            Instagram's login wall limited what I could scrape programmatically, but here's what I've pieced together from your public profile, Linktree, and web presence — and it paints a clear picture:
+        </p>
+
+        <div class="grid-3" style="margin: 32px 0;">
+            <div class="card" style="text-align: center;">
+                <div class="metric-big red" style="font-size: 48px;">~97</div>
+                <div class="metric-label">Total posts visible</div>
+                <p style="margin-top: 8px;">For 5+ years of coaching, this is dangerously low. Competitors are posting 97 pieces in a <em>month</em>.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="metric-big accent2" style="font-size: 48px;">?</div>
+                <div class="metric-label">30-day post frequency</div>
+                <p style="margin-top: 8px;">Based on visible activity, estimated 2-4 posts per week. The standard for authority in 2026 is <span class="bold">daily minimum</span>.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="metric-big highlight" style="font-size: 48px;">Weak</div>
+                <div class="metric-label">Bio & funnel clarity</div>
+                <p style="margin-top: 8px;">Bio says "Helping shooters work with awesome clients through no BS business structure and branding." — decent but not compelling enough to stop the scroll.</p>
+            </div>
+        </div>
+
+        <h3>What I can see is broken:</h3>
+
+        <div class="grid-2" style="margin-top: 20px;">
+            <div class="card card-red">
+                <h4 style="color: var(--red);">Profile Issues</h4>
+                <ul>
+                    <li><span class="bold">Bio doesn't sell the outcome.</span> "No BS business structure" is vague. Needs: "I help videographers go from £0 to £10k/month in 6 months. 60+ success stories."</li>
+                    <li><span class="bold">Linktree is basic.</span> 4 links with no urgency, no social proof in the link descriptions. No lead magnet with an irresistible hook.</li>
+                    <li><span class="bold">Name field</span> says "RGL | The Creatives Mentor" — should include a searchable keyword like "Videographer Coach" or "Creative Business Coach"</li>
+                    <li><span class="bold">No pinned content strategy.</span> Your 3 best case studies should be pinned at all times.</li>
+                </ul>
+            </div>
+            <div class="card card-red">
+                <h4 style="color: var(--red);">Content Issues</h4>
+                <ul>
+                    <li><span class="bold">Volume is too low.</span> In Q1 2026, coaches growing audiences are posting 1-3x daily. You're posting a few times per week at best.</li>
+                    <li><span class="bold">No visible Reels strategy.</span> Short-form video is the #1 growth lever on Instagram right now. Your competitors are using 30-60 second authority clips.</li>
+                    <li><span class="bold">Case study content buried.</span> You have 60+ success stories. Each one should be a carousel, a reel, and a story highlight.</li>
+                    <li><span class="bold">No visible lead magnet.</span> "Free training" link exists but it's not pushed aggressively in content.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card card-green" style="margin-top: 20px;">
+            <h4 style="color: var(--green);">What's working</h4>
+            <ul>
+                <li><span class="bold">YouTube case studies</span> — you have a playlist of how you've helped hundreds of creatives. This is gold. It needs to be repurposed everywhere.</li>
+                <li><span class="bold">Podcast presence</span> — the Spotify podcast episode shows depth and authority. More of this, repurposed into short clips.</li>
+                <li><span class="bold">Brand credibility</span> — Gymshark, Ryderwear, VQ Fit on the CV. This needs to be front and center of everything.</li>
+                <li><span class="bold">Free training funnel exists</span> — just needs to be amplified 10x</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 10: INSTAGRAM OVERHAUL -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">Instagram rebuild — 30-day sprint</div>
+        <h2>The <span class="gradient-text">AI-Powered Content Machine</span></h2>
+        <div class="divider"></div>
+
+        <p style="color: var(--white); font-size: 18px; margin-bottom: 32px;">
+            Here's your 30-day Instagram overhaul. Every single piece of this can be executed with AI doing 80% of the heavy lifting. You just need to talk into your phone — something you're clearly capable of given the voice note you just sent.
+        </p>
+
+        <div class="grid-2">
+            <div class="card card-teal">
+                <h4>Week 1: Profile Overhaul</h4>
+                <ol>
+                    <li><span class="bold">New bio:</span> "I help videographers build £10k/month businesses. 60+ success stories. DM 'GOLD' for free roadmap."</li>
+                    <li><span class="bold">New name field:</span> "Gus Napper | Videographer Business Coach"</li>
+                    <li><span class="bold">Pin 3 posts:</span> Best transformation story, Gold Standard overview, strongest talking-head reel</li>
+                    <li><span class="bold">Story highlights:</span> Results / Method / Free Training / About Gus / Podcast</li>
+                    <li><span class="bold">Linktree upgrade:</span> Add social proof numbers to every link description</li>
+                </ol>
+            </div>
+            <div class="card card-teal">
+                <h4>Week 1-4: Content Cadence</h4>
+                <ol>
+                    <li><span class="bold">Daily Reels (30-60s):</span> Record 5 raw talking-head clips on Sunday. AI edits, captions, and schedules across the week.</li>
+                    <li><span class="bold">3x Carousels/week:</span> AI creates these from your existing course content, call transcripts, and case studies</li>
+                    <li><span class="bold">Daily Stories:</span> Behind-the-scenes, client wins, hot takes — raw, unpolished, real</li>
+                    <li><span class="bold">1x Long-form/week:</span> YouTube video or podcast episode, chopped into 5+ short clips by AI</li>
+                    <li><span class="bold">DM automation:</span> Set up keyword triggers (DM "GOLD") that auto-deliver your lead magnet</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 24px;">
+            <h4>Content pillars — rotate daily</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;">
+                <span class="tag tag-teal">Mon: Client result / case study</span>
+                <span class="tag tag-accent">Tue: Hot take / myth bust</span>
+                <span class="tag tag-yellow">Wed: Behind the scenes</span>
+                <span class="tag tag-green">Thu: Teaching moment / tip</span>
+                <span class="tag tag-teal">Fri: Personal story / vulnerability</span>
+                <span class="tag tag-accent">Sat: Gold Standard teaser</span>
+                <span class="tag tag-yellow">Sun: Batch record next week's reels</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 11: THE RETENTION FIX -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-gradient2">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">Stopping the bleed</div>
+        <h2>Why they're <span class="red">really</span> leaving — and how to <span class="green">make it stop</span></h2>
+        <div class="divider"></div>
+
+        <p style="color: var(--white); font-size: 18px; margin-bottom: 32px;">
+            The "professional paragraph" exits are happening because your clients don't see a future with you past 10-15k. They've hit a ceiling in their mind — not in your ability. Here's the fix:
+        </p>
+
+        <div class="grid-2">
+            <div class="card card-red">
+                <h4 style="color: var(--red);">Why they leave (the real reasons)</h4>
+                <ol>
+                    <li><span class="bold">No visible next level.</span> They hit 10k and look around — there's no "advanced" tier that excites them.</li>
+                    <li><span class="bold">Competitor FOMO.</span> They see shiny ads promises and think "what if that's the missing piece?"</li>
+                    <li><span class="bold">Peer influence.</span> Your top clients have other coaches. That normalises leaving.</li>
+                    <li><span class="bold">Speed mismatch.</span> You say "stay here for a year." They want results tomorrow. The market trained them to expect speed.</li>
+                    <li><span class="bold">Identity shift.</span> At 10k they start seeing themselves as "business owners" not "creatives" — and your brand says "creative mentor."</li>
+                </ol>
+            </div>
+            <div class="card card-green">
+                <h4 style="color: var(--green);">How to fix each one</h4>
+                <ol>
+                    <li><span class="bold">Build the visible ladder.</span> Tier 2 and Tier 3 must be marketed internally. They need to see the path up.</li>
+                    <li><span class="bold">Teach ads yourself.</span> Not to compete — to remove the reason to leave. Add a basic ads module to Tier 2.</li>
+                    <li><span class="bold">Create an alumni identity.</span> "Gold Standard Alumni" badge, network, referral incentives. Make leaving feel like losing status.</li>
+                    <li><span class="bold">Compress your timelines with AI.</span> Show them you can get results in 3 months, not 12. Match the market speed.</li>
+                    <li><span class="bold">Rebrand the top end.</span> Not "creative mentor" — "Creative Business Strategist." Speak their evolved language.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 24px; text-align: center;">
+            <p style="color: var(--white); font-size: 18px; font-weight: 600;">
+                <span class="accent bold">The single most important thing:</span> When someone at 10k looks up, they need to see a ceiling they haven't hit yet — inside your world. Right now they look up and see open sky outside your world. That's why they leave.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 12: THE COMMUNITY PROBLEM -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">Internal erosion</div>
+        <h2>Your community is <span class="accent">consuming itself</span>.<br>Here's how to fix the culture.</h2>
+        <div class="divider divider-accent"></div>
+
+        <p style="color: var(--white); font-size: 18px; margin-bottom: 32px;">
+            You said your members "idealise your top guys" who also have Facebook ads coaches. So the aspirational figures inside your own community are literally modelling the behaviour of leaving. This is a cultural problem, not a content problem.
+        </p>
+
+        <div class="grid-2">
+            <div class="card card-accent">
+                <h4>The narrative you need to control</h4>
+                <p style="color: var(--white); margin-bottom: 12px;">Right now the story in your community is: <em>"Get good with Gus → outgrow Gus → go get ads."</em></p>
+                <p style="color: var(--white);">The story needs to become: <em>"Get good with Gold Standard → level up inside Gold Standard → Gold Standard taught me ads, automation, AND the foundation."</em></p>
+                <div style="margin-top: 16px;">
+                    <p><span class="bold accent">How:</span></p>
+                    <ul>
+                        <li>Feature Tier 2/3 members (who stayed) as the heroes, not the ones who left</li>
+                        <li>Create "Gold Standard Alumni" case studies showing people who stayed and hit 15k, 20k, 30k+</li>
+                        <li>Have frank conversations on calls about why "shiny object syndrome" kills businesses — use data, not emotion</li>
+                        <li>Bring in a guest expert for a monthly ads/automation workshop — keeps it in-house</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card card-teal">
+                <h4>The "Facebook ads expose bad businesses" angle</h4>
+                <p style="color: var(--white); margin-bottom: 12px;">You're 100% right that ads expose a bad business. But right now you're saying this defensively. Flip it into a content angle:</p>
+                <ul>
+                    <li><span class="bold">"Why I don't let my clients run ads until they hit 10k"</span> — reel content</li>
+                    <li><span class="bold">"The videographer who spent £3k on ads and got zero clients"</span> — case study</li>
+                    <li><span class="bold">"Ads vs Organic: what the data actually says at each revenue level"</span> — carousel</li>
+                    <li><span class="bold">"I teach ads. But not until you're ready."</span> — positioning statement</li>
+                </ul>
+                <p style="margin-top: 12px; color: var(--white);">This reframes you from "the coach who doesn't teach ads" to <span class="bold">"the coach who knows WHEN to teach ads."</span> That's a much more powerful position.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 13: 90-DAY EXECUTION PLAN -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-gradient1">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">Execution</div>
+        <h2>The <span class="gradient-text">90-Day Sprint</span></h2>
+        <div class="divider"></div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 8px;">
+                    <h3 style="margin: 0;">Days 1-14</h3>
+                    <span class="tag tag-red">Emergency</span>
+                </div>
+                <div class="card">
+                    <h4>Stop the bleeding + IP extraction</h4>
+                    <div class="grid-2" style="margin-top: 12px;">
+                        <div>
+                            <p class="bold" style="color: var(--white); margin-bottom: 8px;">Retention moves:</p>
+                            <ul>
+                                <li>Personal call to every 1:1 client — "here's what's coming in Q2"</li>
+                                <li>Announce Tier 2 and Tier 3 internally — even before they're built</li>
+                                <li>Offer existing 10k+ clients early access / founder pricing</li>
+                                <li>Lock in 6-month commitments with incentives</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="bold" style="color: var(--white); margin-bottom: 8px;">AI + Content moves:</p>
+                            <ul>
+                                <li>Record 20+ voice note brain dumps of your entire methodology</li>
+                                <li>Run them through AI → structured course content, social posts, email sequences</li>
+                                <li>Instagram profile overhaul (bio, highlights, pinned posts)</li>
+                                <li>Start daily content cadence immediately</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 8px;">
+                    <h3 style="margin: 0;">Days 15-45</h3>
+                    <span class="tag tag-accent">Build</span>
+                </div>
+                <div class="card">
+                    <h4>Build the machine</h4>
+                    <div class="grid-2" style="margin-top: 12px;">
+                        <div>
+                            <p class="bold" style="color: var(--white); margin-bottom: 8px;">Product builds:</p>
+                            <ul>
+                                <li>Launch Tier 1 e-product / subscription (Gold Standard Community)</li>
+                                <li>Build AI onboarding system for new members</li>
+                                <li>Create Tier 2 curriculum (include basic ads + automation modules)</li>
+                                <li>Set up AI coaching assistant for community Q&A</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="bold" style="color: var(--white); margin-bottom: 8px;">Marketing moves:</p>
+                            <ul>
+                                <li>Launch lead magnet: "The Videographer's 90-Day Business Blueprint"</li>
+                                <li>DM automation live on Instagram</li>
+                                <li>Begin running your own ads (yes, your own — practise what you preach)</li>
+                                <li>Guest on 4+ podcasts in the creative/fitness space</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 8px;">
+                    <h3 style="margin: 0;">Days 45-90</h3>
+                    <span class="tag tag-green">Scale</span>
+                </div>
+                <div class="card">
+                    <h4>Scale + dominate</h4>
+                    <div class="grid-2" style="margin-top: 12px;">
+                        <div>
+                            <p class="bold" style="color: var(--white); margin-bottom: 8px;">Growth moves:</p>
+                            <ul>
+                                <li>Launch Tier 3 Inner Circle — application only, max 3 clients</li>
+                                <li>First cohort of Tier 2 Accelerator running</li>
+                                <li>AI content machine producing 30+ pieces per week</li>
+                                <li>Email list growing from lead magnet + content</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="bold" style="color: var(--white); margin-bottom: 8px;">Authority moves:</p>
+                            <ul>
+                                <li>Publish "The Gold Standard Report" — annual state of the videography business industry</li>
+                                <li>Host a free virtual summit / masterclass</li>
+                                <li>Strategic collaborations with non-competing coaches</li>
+                                <li>Document everything — your comeback IS the content</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 14: THE NUMBERS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-dark2">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">Revenue projection</div>
+        <h2>What this looks like in <span class="highlight">numbers</span></h2>
+        <div class="divider"></div>
+
+        <p style="color: var(--white); font-size: 18px; margin-bottom: 40px;">Conservative scenario — based on current market rates and your existing audience.</p>
+
+        <div class="grid-3">
+            <div class="card card-teal" style="text-align: center;">
+                <h4>Tier 1: Foundation</h4>
+                <div class="metric-big highlight" style="font-size: 42px;">£4,850-£9,850</div>
+                <div class="metric-label">Monthly recurring</div>
+                <p style="margin-top: 12px;">50 members × £97-£197/month</p>
+                <div class="progress-bar"><div class="progress-fill progress-teal" style="width: 40%;"></div></div>
+                <p style="font-size: 12px;">Achievable within 60 days</p>
+            </div>
+            <div class="card card-accent" style="text-align: center;">
+                <h4>Tier 2: Accelerator</h4>
+                <div class="metric-big accent" style="font-size: 42px;">£3,976-£7,976</div>
+                <div class="metric-label">Monthly recurring</div>
+                <p style="margin-top: 12px;">8 members × £497-£997/month</p>
+                <div class="progress-bar"><div class="progress-fill progress-accent" style="width: 60%;"></div></div>
+                <p style="font-size: 12px;">First cohort within 45 days</p>
+            </div>
+            <div class="card card-yellow" style="text-align: center;">
+                <h4>Tier 3: Inner Circle</h4>
+                <div class="metric-big accent2" style="font-size: 42px;">£4,000-£9,000</div>
+                <div class="metric-label">Monthly recurring</div>
+                <p style="margin-top: 12px;">2-3 clients × £2,000-£3,000/month</p>
+                <div class="progress-bar"><div class="progress-fill progress-teal" style="width: 80%;"></div></div>
+                <p style="font-size: 12px;">Application-only by Day 60</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 32px; text-align: center;">
+            <div class="metric-row" style="justify-content: center; margin: 0;">
+                <div class="metric-item">
+                    <div class="metric-big gradient-text" style="font-size: 52px;">£12,826 — £26,826</div>
+                    <div class="metric-label">Total monthly recurring revenue (90-day target)</div>
+                </div>
+            </div>
+            <p style="margin-top: 16px; color: var(--white);">
+                This doesn't include one-off e-product sales, course launches, or ad revenue from your own content. Those are upside.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 15: THE MARKET REALITY -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">Market context — March 2026</div>
+        <h2>The world Gus is operating in <span class="accent">right now</span></h2>
+        <div class="divider divider-accent"></div>
+
+        <div class="grid-2" style="margin-top: 24px;">
+            <div class="card card-accent">
+                <h4>The coaching industry in 2026</h4>
+                <ul>
+                    <li>Global coaching market projected at <span class="bold">$5.8 billion</span></li>
+                    <li>75% of high-performing coaching businesses use <span class="bold">AI co-pilots</span></li>
+                    <li>Coaches using AI see conversion rates increase from <span class="bold">15% to 37%</span></li>
+                    <li>AI-automated coaches recover <span class="bold">10+ hours per week</span></li>
+                    <li>Customer acquisition costs reduced by <span class="bold">up to 60%</span> with AI marketing</li>
+                    <li>AI-powered retention strategies boost retention by <span class="bold">up to 40%</span></li>
+                </ul>
+            </div>
+            <div class="card card-teal">
+                <h4>What's winning in 2026</h4>
+                <ul>
+                    <li><span class="bold">Authenticity over production value</span> — raw, real content outperforms polished studio work</li>
+                    <li><span class="bold">30-60 second authority reels</span> — teach, bust myths, share quick wins. This is what converts.</li>
+                    <li><span class="bold">AI-personalised client journeys</span> — one-size-fits-all is dead</li>
+                    <li><span class="bold">Community-led growth</span> — members selling for you through their own results</li>
+                    <li><span class="bold">Subscription > one-off</span> — recurring revenue from memberships is the model that scales</li>
+                    <li><span class="bold">Trust is the differentiator</span> — clear positioning + proven results > flashy marketing</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 24px; text-align: center;">
+            <p style="color: var(--white); font-size: 20px; font-weight: 600;">
+                <span class="accent bold">There is no avenue where slow or gradual works anymore.</span><br>
+                Even when it feels like the "right" thing to do — it isn't. The market rewards speed, execution, and delivery. AI makes all three possible without sacrificing quality.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 16: THE REAL TALK -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-gradient1">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">The uncomfortable truth</div>
+        <h2>The things <span class="accent">no one else</span> will say to you</h2>
+        <div class="divider divider-accent"></div>
+
+        <div class="card card-accent" style="margin-top: 24px;">
+            <h4>On complacency</h4>
+            <p style="color: var(--white);">You said you "trusted your own results for too long and got complacent." That's true. But the fix isn't self-flagellation — it's speed. Every day you spend feeling bad about the past is a day your competitors gain ground. The complacency era is over. You've already acknowledged it. Now move.</p>
+        </div>
+
+        <div class="card card-accent">
+            <h4>On the "kind human" thing</h4>
+            <p style="color: var(--white);">You don't need to stop being kind. You need to stop being <span class="bold">passive</span>. There's a difference. Kind + aggressive is the most powerful combination in coaching. Be the guy who genuinely cares AND who has the best product AND who markets harder than anyone. You don't have to choose.</p>
+        </div>
+
+        <div class="card card-accent">
+            <h4>On the people who left</h4>
+            <p style="color: var(--white);">Some of them will fail with their new coaches. Some will succeed. Either way — they're gone. Stop trying to get them back. Pour that energy into making the people who stayed feel like they made the best decision of their career. <span class="bold">The best revenge is building something so undeniable that the people who left regret it.</span></p>
+        </div>
+
+        <div class="card card-accent">
+            <h4>On being 39</h4>
+            <p style="color: var(--white);">You're not old. You're experienced. But you need to act like someone with 5 years of IP who just discovered a cheat code called AI. Because that's literally what's happened. The coaches poaching your clients are younger, hungrier, and faster on social media — but they don't have what you have: <span class="bold">a proven methodology built over half a decade of actual coaching.</span> That's an asset worth millions if you deploy it correctly.</p>
+        </div>
+
+        <div class="card card-teal" style="margin-top: 24px;">
+            <h4>On keeping this between us</h4>
+            <p style="color: var(--white);">Understood. This document goes nowhere. But here's the thing — <span class="bold">vulnerability IS the content in 2026.</span> When you're ready, the story of "I lost 40% of my business and rebuilt it in 90 days" is the most powerful piece of content you'll ever create. Not now. But when you're on the other side of this.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 17: IMMEDIATE ACTIONS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-dark2">
+    <div class="slide-inner fade-up">
+        <div class="section-tag">What to do tomorrow morning</div>
+        <h2><span class="gradient-text">5 things to do in the next 48 hours</span></h2>
+        <div class="divider"></div>
+
+        <ol style="margin-top: 24px;">
+            <li style="margin-bottom: 24px;">
+                <div class="card card-teal" style="margin-left: 0;">
+                    <p style="color: var(--white);"><span class="bold highlight" style="font-size: 18px;">Record 10 voice note brain dumps.</span><br>
+                    Each one: 5-10 minutes. Cover one topic each: getting your first client, pricing, portfolio building, rate increases, team hiring, client retention, authority building, ads timing, automation, mindset. Feed every single one through AI. This is your IP extraction sprint.</p>
+                </div>
+            </li>
+            <li style="margin-bottom: 24px;">
+                <div class="card card-teal" style="margin-left: 0;">
+                    <p style="color: var(--white);"><span class="bold highlight" style="font-size: 18px;">Overhaul your Instagram bio and profile tonight.</span><br>
+                    New bio. New name field. Pin your 3 best posts. Update story highlights. This takes 30 minutes and immediately changes first impressions.</p>
+                </div>
+            </li>
+            <li style="margin-bottom: 24px;">
+                <div class="card card-teal" style="margin-left: 0;">
+                    <p style="color: var(--white);"><span class="bold highlight" style="font-size: 18px;">Call your top 5 remaining 1:1 clients.</span><br>
+                    Not a coaching call. A "here's what's coming and you're getting first access" call. Make them feel like insiders, not customers. Lock in commitment.</p>
+                </div>
+            </li>
+            <li style="margin-bottom: 24px;">
+                <div class="card card-teal" style="margin-left: 0;">
+                    <p style="color: var(--white);"><span class="bold highlight" style="font-size: 18px;">Map out your 3-tier structure on paper.</span><br>
+                    Foundation. Accelerator. Inner Circle. What goes in each. What price. What access. Share it with your creative coach and personal development coach. Get their input. Make them co-owners of the vision.</p>
+                </div>
+            </li>
+            <li style="margin-bottom: 24px;">
+                <div class="card card-accent" style="margin-left: 0;">
+                    <p style="color: var(--white);"><span class="bold accent" style="font-size: 18px;">Post a reel tomorrow. Raw. Unfiltered. No excuses.</span><br>
+                    Topic: "The one thing I see kill more videography businesses than anything else." Go straight to camera. 45 seconds. Post it. Don't overthink it. The algorithm rewards consistency and the first post is always the hardest after a gap.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 18: CLOSING -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide bg-gradient1" style="text-align: center;">
+    <div class="particles" id="particles-2"></div>
+    <div class="slide-inner fade-up">
+        <div class="section-tag">Final word</div>
+        <h1 style="max-width: 900px; margin: 0 auto 24px;">
+            You built the <span class="gradient-text">Gold Standard</span>.<br>
+            Now it's time to <span class="accent">operate</span> like it.
+        </h1>
+        <div class="divider divider-center"></div>
+
+        <p style="font-size: clamp(18px, 2vw, 22px); color: var(--white); max-width: 700px; margin: 0 auto 40px; line-height: 1.6;">
+            60+ videographers mentored. Gymshark, Ryderwear, VQ Fit on the resume. A methodology that consistently takes people from zero to five figures. A community that people describe as "incredible."
+        </p>
+
+        <p style="font-size: clamp(18px, 2vw, 22px); color: var(--white); max-width: 700px; margin: 0 auto 40px; line-height: 1.6;">
+            The product isn't the problem, Gus. The packaging, speed, and visibility are. Fix those three things — with AI as your accelerant — and you don't just recover. You become the coach that every other coach in this space is trying to catch.
+        </p>
+
+        <div class="quote" style="max-width: 700px; margin: 40px auto; text-align: left;">
+            "Facebook ads expose a bad business; they don't make it better."<br>
+            <span style="font-size: 14px; color: var(--teal); font-style: normal; font-weight: 700;">— Gus Napper</span>
+        </div>
+
+        <p style="font-size: 18px; color: var(--white); font-weight: 600; margin-top: 40px;">
+            That quote alone is worth more than every Facebook ads course combined.<br>
+            <span class="accent">Now make the world hear it.</span>
+        </p>
+
+        <p style="margin-top: 80px; font-size: 13px; color: rgba(255,255,255,0.2);">
+            Confidential — Prepared March 2026<br>
+            This document is between you and the person who sent it. Nobody else.
+        </p>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- JAVASCRIPT -->
+<!-- ═══════════════════════════════════════════ -->
+<script>
+    // Scroll-triggered fade animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Particle generation
+    function createParticles(containerId, count = 15) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        for (let i = 0; i < count; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.setProperty('--duration', (8 + Math.random() * 10) + 's');
+            particle.style.setProperty('--delay', (Math.random() * 5) + 's');
+            container.appendChild(particle);
+        }
+    }
+
+    createParticles('particles-1', 20);
+    createParticles('particles-2', 20);
+
+    // Nav dots
+    const slides = document.querySelectorAll('.slide');
+    const navDots = document.querySelector('.nav-dots');
+
+    if (navDots) {
+        slides.forEach((slide, i) => {
+            const dot = document.createElement('div');
+            dot.className = 'nav-dot';
+            dot.addEventListener('click', () => {
+                slide.scrollIntoView({ behavior: 'smooth' });
+            });
+            navDots.appendChild(dot);
+        });
+
+        const dotObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(slides).indexOf(entry.target);
+                    document.querySelectorAll('.nav-dot').forEach((d, i) => {
+                        d.classList.toggle('active', i === index);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        slides.forEach(slide => dotObserver.observe(slide));
+    }
+</script>
+
+<div class="nav-dots"></div>
+
+</body>
+</html>
